@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hastane Web Sitesi Modülleri - Hisar Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://hisarhospital.com/wp-content/uploads/2019/10/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="https://hisarhospital.com/wp-content/uploads/2019/10/logo.svg" alt="Hisar Hospital" class="logo">
+                <h1>Hastane Web Sitesi Modülleri</h1>
+                <p>Kurumsal Renklerle Yenilikçi ve Kullanıcı Odaklı Modül Örnekleri</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#symptom-checker" class="nav-link"><i class="fas fa-stethoscope"></i> Semptom Yönlendirme</a></li>
+                <li><a href="#health-timeline" class="nav-link"><i class="fas fa-history"></i> Sağlık Zaman Tüneli</a></li>
+                <li><a href="#treatment-simulator" class="nav-link"><i class="fas fa-calculator"></i> Tedavi Simülatörü</a></li>
+                <li><a href="#bmi-calculator" class="nav-link"><i class="fas fa-weight"></i> BMI Hesaplayıcı</a></li>
+                <li><a href="#vr-tour" class="nav-link"><i class="fas fa-vr-cardboard"></i> VR Hastane Turu</a></li>
+                <li><a href="#health-coach" class="nav-link"><i class="fas fa-robot"></i> Sağlık Koçu</a></li>
+                <li><a href="#medication-reminder" class="nav-link"><i class="fas fa-pills"></i> İlaç Hatırlatma</a></li>
+                <li><a href="#expert-opinion" class="nav-link"><i class="fas fa-user-md"></i> Uzman Görüşü</a></li>
+                <li><a href="#appointment-system" class="nav-link"><i class="fas fa-calendar-check"></i> Online Randevu</a></li>
+                <li><a href="#patient-portal" class="nav-link"><i class="fas fa-user-circle"></i> Hasta Portalı</a></li>
+                <li><a href="#health-blog" class="nav-link"><i class="fas fa-blog"></i> Sağlık Blogu</a></li>
+                <li><a href="#event-calendar" class="nav-link"><i class="fas fa-calendar-alt"></i> Etkinlik Takvimi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Semptom Yönlendirme Modülü -->
+            <section id="symptom-checker" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-stethoscope"></i> Semptom Yönlendirme ve Ön Tanı</h2>
+                    <p>Semptomlarınıza göre doğru uzmana yönlendirilmenizi sağlar</p>
+                </div>
+                <div class="module-content">
+                    <div class="symptom-checker">
+                        <div class="step-indicator">
+                            <div class="step active">1</div>
+                            <div class="step">2</div>
+                            <div class="step">3</div>
+                            <div class="step">4</div>
+                        </div>
+
+                        <div class="question active" data-step="1">
+                            <h3>Hangi bölgede rahatsızlık yaşıyorsunuz?</h3>
+                            <div class="body-diagram">
+                                <div class="body-part" data-part="head">
+                                    <i class="fas fa-head-side-cough"></i>
+                                    <span>Baş</span>
+                                </div>
+                                <div class="body-part" data-part="chest">
+                                    <i class="fas fa-lungs"></i>
+                                    <span>Göğüs</span>
+                                </div>
+                                <div class="body-part" data-part="abdomen">
+                                    <i class="fas fa-stomach"></i>
+                                    <span>Karın</span>
+                                </div>
+                                <div class="body-part" data-part="limbs">
+                                    <i class="fas fa-bone"></i>
+                                    <span>Kol/Bacak</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question" data-step="2">
+                            <h3>Şikayetiniz ne kadar süredir devam ediyor?</h3>
+                            <div class="time-options">
+                                <button class="time-btn" data-time="hours">Birkaç saat</button>
+                                <button class="time-btn" data-time="days">Birkaç gün</button>
+                                <button class="time-btn" data-time="weeks">Birkaç hafta</button>
+                                <button class="time-btn" data-time="months">Birkaç ay</button>
+                            </div>
+                        </div>
+
+                        <div class="question" data-step="3">
+                            <h3>Ağrı şiddetinizi değerlendirin</h3>
+                            <div class="pain-scale">
+                                <div class="scale-container">
+                                    <input type="range" id="pain-slider" min="1" max="10" value="5">
+                                    <div class="scale-labels">
+                                        <span>Hafif</span>
+                                        <span id="pain-value">5</span>
+                                        <span>Şiddetli</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question" data-step="4">
+                            <h3>Önerilen Uzman</h3>
+                            <div class="doctor-card">
+                                <img src="https://via.placeholder.com/80x80" alt="Doktor">
+                                <div class="doctor-info">
+                                    <h4>Dr. Ayşe Kaya</h4>
+                                    <p>Nöroloji Uzmanı</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <div class="appointment-options">
+                                    <button class="btn-primary">Randevu Al</button>
+                                    <button class="btn-secondary">Profil Görüntüle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="navigation-buttons">
+                            <button id="prev-btn" class="btn-nav" disabled>Önceki</button>
+                            <button id="next-btn" class="btn-nav">Sonraki</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BMI Hesaplayıcı Modülü -->
+            <section id="bmi-calculator" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-weight"></i> Vücut Kitle Endeksi (BMI) Hesaplayıcı</h2>
+                    <p>Sağlık durumunuzu değerlendirin ve kişiselleştirilmiş öneriler alın</p>
+                </div>
+                <div class="module-content">
+                    <div class="bmi-calculator">
+                        <div class="bmi-input-section">
+                            <div class="bmi-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="height">Boy (cm)</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-ruler-vertical"></i>
+                                            <input type="number" id="height" placeholder="170" min="100" max="250">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="weight">Kilo (kg)</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-weight"></i>
+                                            <input type="number" id="weight" placeholder="70" min="30" max="300">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="age">Yaş</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-birthday-cake"></i>
+                                            <input type="number" id="age" placeholder="30" min="1" max="120">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Cinsiyet</label>
+                                        <div class="gender-selection">
+                                            <button type="button" class="gender-btn" data-gender="male">
+                                                <i class="fas fa-mars"></i> Erkek
+                                            </button>
+                                            <button type="button" class="gender-btn" data-gender="female">
+                                                <i class="fas fa-venus"></i> Kadın
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-calculate" onclick="calculateBMI()">
+                                    <i class="fas fa-calculator"></i> BMI Hesapla
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bmi-results" id="bmi-results" style="display: none;">
+                            <div class="bmi-display">
+                                <div class="bmi-circle">
+                                    <div class="bmi-value" id="bmi-value">0</div>
+                                    <div class="bmi-label">BMI</div>
+                                </div>
+                                <div class="bmi-category" id="bmi-category">-</div>
+                            </div>
+
+                            <div class="bmi-gauge">
+                                <div class="gauge-container">
+                                    <div class="gauge-bar">
+                                        <div class="gauge-section underweight"></div>
+                                        <div class="gauge-section normal"></div>
+                                        <div class="gauge-section overweight"></div>
+                                        <div class="gauge-section obese"></div>
+                                    </div>
+                                    <div class="gauge-pointer" id="gauge-pointer"></div>
+                                </div>
+                                <div class="gauge-labels">
+                                    <span>Zayıf</span>
+                                    <span>Normal</span>
+                                    <span>Fazla Kilolu</span>
+                                    <span>Obez</span>
+                                </div>
+                            </div>
+
+                            <div class="bmi-details">
+                                <div class="detail-card">
+                                    <h4><i class="fas fa-target"></i> İdeal Kilo Aralığı</h4>
+                                    <p id="ideal-weight">-</p>
+                                </div>
+                                <div class="detail-card">
+                                    <h4><i class="fas fa-chart-line"></i> Kilo Değişimi</h4>
+                                    <p id="weight-change">-</p>
+                                </div>
+                                <div class="detail-card">
+                                    <h4><i class="fas fa-heartbeat"></i> Sağlık Durumu</h4>
+                                    <p id="health-status">-</p>
+                                </div>
+                            </div>
+
+                            <div class="bmi-recommendations" id="bmi-recommendations">
+                                <h4><i class="fas fa-lightbulb"></i> Kişiselleştirilmiş Öneriler</h4>
+                                <div class="recommendation-list" id="recommendation-list">
+                                    <!-- Öneriler buraya dinamik olarak eklenecek -->
+                                </div>
+                            </div>
+
+                            <div class="bmi-actions">
+                                <button class="btn-primary" onclick="bookNutritionistAppointment()">
+                                    <i class="fas fa-apple-alt"></i> Diyetisyen Randevusu
+                                </button>
+                                <button class="btn-secondary" onclick="downloadBMIReport()">
+                                    <i class="fas fa-download"></i> Rapor İndir
+                                </button>
+                                <button class="btn-secondary" onclick="shareBMIResult()">
+                                    <i class="fas fa-share"></i> Paylaş
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sağlık Zaman Tüneli -->
+            <section id="health-timeline" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-history"></i> Sağlık Zaman Tüneli</h2>
+                    <p>Kişiselleştirilmiş sağlık geçmişinizi görselleştirin</p>
+                </div>
+                <div class="module-content">
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024</div>
+                                <div class="timeline-content">
+                                    <h4>Rutin Check-up</h4>
+                                    <p>Genel sağlık kontrolü - Normal sonuçlar</p>
+                                    <span class="timeline-category health">Genel Sağlık</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023</div>
+                                <div class="timeline-content">
+                                    <h4>Diz Artroskopisi</h4>
+                                    <p>Sol diz menisküs tamiri - Başarılı operasyon</p>
+                                    <span class="timeline-category surgery">Cerrahi</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2022</div>
+                                <div class="timeline-content">
+                                    <h4>Hipertansiyon Tanısı</h4>
+                                    <p>Kan basıncı yüksekliği - İlaç tedavisi başlandı</p>
+                                    <span class="timeline-category chronic">Kronik</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2021</div>
+                                <div class="timeline-content">
+                                    <h4>COVID-19 Aşısı</h4>
+                                    <p>2 doz BioNTech aşısı tamamlandı</p>
+                                    <span class="timeline-category vaccine">Aşı</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-controls">
+                            <button class="btn-timeline" onclick="addTimelineEvent()">Yeni Olay Ekle</button>
+                            <button class="btn-timeline" onclick="exportTimeline()">PDF İndir</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tedavi Simülatörü -->
+            <section id="treatment-simulator" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-calculator"></i> Tedavi Süreci Simülatörü</h2>
+                    <p>Tedavi sürecinizi ve maliyetlerinizi önceden planlayın</p>
+                </div>
+                <div class="module-content">
+                    <h3>Tedavi Türünü Seçin</h3>
+                    <div class="treatment-grid">
+                        <div class="treatment-card" data-treatment="knee">
+                            <i class="fas fa-bone"></i>
+                            <h4>Diz Protezi</h4>
+                            <p>Total diz protezi ameliyatı</p>
+                        </div>
+                        <div class="treatment-card" data-treatment="hair">
+                            <i class="fas fa-cut"></i>
+                            <h4>Saç Ekimi</h4>
+                            <p>FUE saç ekimi işlemi</p>
+                        </div>
+                        <div class="treatment-card" data-treatment="obesity">
+                            <i class="fas fa-weight-hanging"></i>
+                            <h4>Obezite Cerrahisi</h4>
+                            <p>Gastrik sleeve ameliyatı</p>
+                        </div>
+                        <div class="treatment-card" data-treatment="cataract">
+                            <i class="fas fa-eye"></i>
+                            <h4>Katarakt</h4>
+                            <p>Katarakt ameliyatı</p>
+                        </div>
+                    </div>
+
+                    <div id="treatment-details" style="display: none;">
+                        <h3>Tedavi Süreci</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Ön Muayene</h4>
+                                    <p>Detaylı muayene ve tetkikler</p>
+                                    <span class="step-duration">1-2 gün</span>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Ameliyat Öncesi Hazırlık</h4>
+                                    <p>Anestezi değerlendirmesi ve hazırlık</p>
+                                    <span class="step-duration">1 gün</span>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Ameliyat</h4>
+                                    <p>Cerrahi işlem</p>
+                                    <span class="step-duration">2-4 saat</span>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>İyileşme Süreci</h4>
+                                    <p>Hastanede kalış ve kontroller</p>
+                                    <span class="step-duration">3-7 gün</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Maliyet Hesaplaması</h3>
+                        <div class="insurance-section">
+                            <label for="insurance-select">Sigorta Türünüz:</label>
+                            <select id="insurance-select">
+                                <option value="">Sigorta Seçin</option>
+                                <option value="sgk">SGK</option>
+                                <option value="private">Özel Sigorta</option>
+                                <option value="none">Sigortasız</option>
+                            </select>
+                            <div class="insurance-coverage"></div>
+                        </div>
+
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span>Ameliyat Ücreti</span>
+                                <span class="cost">₺35.000</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Hastane Ücreti</span>
+                                <span class="cost">₺12.000</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>İlaç ve Malzeme</span>
+                                <span class="cost">₺5.500</span>
+                            </div>
+                            <div class="cost-item total">
+                                <span>Toplam</span>
+                                <span class="cost">₺52.500</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary" onclick="requestQuote()">Detaylı Teklif Al</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VR Hastane Turu -->
+            <section id="vr-tour" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-vr-cardboard"></i> Sanal Hastane Turu</h2>
+                    <p>Hastaneyi sanal gerçeklik ile keşfedin</p>
+                </div>
+                <div class="module-content">
+                    <div class="vr-preview">
+                        <div class="vr-image">
+                            <i class="fas fa-hospital"></i>
+                            <h3>360° Hastane Turu</h3>
+                            <p>Hastanemizin farklı bölümlerini sanal olarak gezin</p>
+                        </div>
+                    </div>
+
+                    <div class="vr-locations">
+                        <div class="location-card" onclick="show360View('Lobi')">
+                            <i class="fas fa-door-open"></i>
+                            <h4>Lobi</h4>
+                            <p>Ana giriş ve karşılama alanı</p>
+                        </div>
+                        <div class="location-card" onclick="show360View('Poliklinikler')">
+                            <i class="fas fa-clinic-medical"></i>
+                            <h4>Poliklinikler</h4>
+                            <p>Uzman doktor muayene odaları</p>
+                        </div>
+                        <div class="location-card" onclick="show360View('Hasta Odaları')">
+                            <i class="fas fa-bed"></i>
+                            <h4>Hasta Odaları</h4>
+                            <p>Konforlu hasta yatış odaları</p>
+                        </div>
+                        <div class="location-card" onclick="show360View('Ameliyathaneler')">
+                            <i class="fas fa-procedures"></i>
+                            <h4>Ameliyathaneler</h4>
+                            <p>Modern cerrahi üniteler</p>
+                        </div>
+                    </div>
+
+                    <div class="vr-controls">
+                        <button class="btn-primary" onclick="startVRTour()">VR Turu Başlat</button>
+                        <button class="btn-secondary" onclick="show360View()">360° Görünüm</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sağlık Koçu -->
+            <section id="health-coach" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-robot"></i> Sağlık Koçu - AI Asistan</h2>
+                    <p>Sağlık sorularınıza anında yanıt alın</p>
+                </div>
+                <div class="module-content">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message bot-message">
+                                <div class="message-content">
+                                    <p>Merhaba! Ben sizin sağlık asistanınızım. Sağlık ile ilgili sorularınızı yanıtlamak için buradayım. Size nasıl yardımcı olabilirim?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-questions">
+                            <button class="quick-btn" onclick="askQuickQuestion('Baş ağrısı için ne yapmalıyım?')">Baş ağrısı için ne yapmalıyım?</button>
+                            <button class="quick-btn" onclick="askQuickQuestion('Hangi doktora gitmeliyim?')">Hangi doktora gitmeliyim?</button>
+                            <button class="quick-btn" onclick="askQuickQuestion('Randevu nasıl alabilirim?')">Randevu nasıl alabilirim?</button>
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" id="chat-input" placeholder="Sorunuzu yazın...">
+                            <button class="send-btn" onclick="sendMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- İlaç Hatırlatma -->
+            <section id="medication-reminder" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-pills"></i> İlaç Hatırlatma Sistemi</h2>
+                    <p>İlaçlarınızı zamanında almayı unutmayın</p>
+                </div>
+                <div class="module-content">
+                    <div class="medication-list">
+                        <div class="medication-item">
+                            <div class="medication-info">
+                                <h4>Aspirin 100mg</h4>
+                                <p>Günde 1 kez, sabah</p>
+                                <span class="next-dose">Sonraki doz: Yarın 08:00</span>
+                            </div>
+                            <button class="reminder-btn" onclick="setReminder(this)">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                        </div>
+                        <div class="medication-item">
+                            <div class="medication-info">
+                                <h4>Metformin 500mg</h4>
+                                <p>Günde 2 kez, yemeklerle</p>
+                                <span class="next-dose">Sonraki doz: Bugün 19:00</span>
+                            </div>
+                            <button class="reminder-btn" onclick="setReminder(this)">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="medication-calendar">
+                        <h3>Haftalık İlaç Takvimi</h3>
+                        <div class="calendar-grid">
+                            <div class="calendar-day">
+                                <span class="day-name">Pzt</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Sal</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Çar</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Per</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Cum</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Cmt</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                            <div class="calendar-day">
+                                <span class="day-name">Paz</span>
+                                <div class="day-medications">
+                                    <div class="med-time">08:00 - Aspirin</div>
+                                    <div class="med-time">19:00 - Metformin</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="addMedication()">Yeni İlaç Ekle</button>
+                </div>
+            </section>
+
+            <!-- Uzman Görüşü -->
+            <section id="expert-opinion" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-user-md"></i> Uzman Görüşü Platformu</h2>
+                    <p>İkinci görüş alın ve uzmanlarımızla iletişime geçin</p>
+                </div>
+                <div class="module-content">
+                    <div class="expert-opinion">
+                        <div class="opinion-form">
+                            <h3>İkinci Görüş Talep Formu</h3>
+                            <form id="opinion-form">
+                                <div class="form-group">
+                                    <label for="patient-name">Ad Soyad *</label>
+                                    <input type="text" id="patient-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient-phone">Telefon *</label>
+                                    <input type="tel" id="patient-phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient-email">E-posta *</label>
+                                    <input type="email" id="patient-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="specialty">Uzmanlık Alanı *</label>
+                                    <select id="specialty" required>
+                                        <option value="">Seçiniz</option>
+                                        <option value="cardiology">Kardiyoloji</option>
+                                        <option value="neurology">Nöroloji</option>
+                                        <option value="orthopedics">Ortopedi</option>
+                                        <option value="oncology">Onkoloji</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="current-diagnosis">Mevcut Tanı/Durum</label>
+                                    <textarea id="current-diagnosis" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tıbbi Dosyalar</label>
+                                    <div class="file-upload-area" onclick="uploadMedicalFile()">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Tıbbi raporlarınızı, görüntüleme sonuçlarınızı yükleyin</p>
+                                        <small>PDF, JPG, PNG formatları desteklenir</small>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-primary" onclick="submitSecondOpinion()">Talep Gönder</button>
+                            </form>
+                        </div>
+
+                        <div class="expert-panel">
+                            <h3>Uzman Panelimiz</h3>
+                            <div class="expert-grid">
+                                <div class="expert-card">
+                                    <img src="https://via.placeholder.com/80x80" alt="Uzman">
+                                    <h4>Prof. Dr. Mehmet Özkan</h4>
+                                    <p>Kardiyoloji Uzmanı</p>
+                                    <span class="experience">15 yıl deneyim</span>
+                                </div>
+                                <div class="expert-card">
+                                    <img src="https://via.placeholder.com/80x80" alt="Uzman">
+                                    <h4>Doç. Dr. Ayşe Kaya</h4>
+                                    <p>Nöroloji Uzmanı</p>
+                                    <span class="experience">12 yıl deneyim</span>
+                                </div>
+                                <div class="expert-card">
+                                    <img src="https://via.placeholder.com/80x80" alt="Uzman">
+                                    <h4>Dr. Ali Demir</h4>
+                                    <p>Ortopedi Uzmanı</p>
+                                    <span class="experience">10 yıl deneyim</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Online Randevu Sistemi -->
+            <section id="appointment-system" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-calendar-check"></i> Gelişmiş Online Randevu Sistemi</h2>
+                    <p>Kolayca randevu alın ve yönetin</p>
+                </div>
+                <div class="module-content">
+                    <div class="appointment-steps">
+                        <div class="step-item active">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Branş Seçimi</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Doktor Seçimi</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Tarih & Saat</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-title">Onay</div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-content">
+                        <div class="step-panel active" data-step="1">
+                            <h3>Branş Seçimi</h3>
+                            <div class="selected-info" id="selected-info" style="display: none;">
+                                <p>Seçilen Branş: <strong id="selected-department">-</strong></p>
+                            </div>
+                            <div class="department-grid">
+                                <div class="department-card" data-dept="cardiology">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <h4>Kardiyoloji</h4>
+                                    <p>Kalp ve damar hastalıkları</p>
+                                </div>
+                                <div class="department-card" data-dept="neurology">
+                                    <i class="fas fa-brain"></i>
+                                    <h4>Nöroloji</h4>
+                                    <p>Sinir sistemi hastalıkları</p>
+                                </div>
+                                <div class="department-card" data-dept="orthopedics">
+                                    <i class="fas fa-bone"></i>
+                                    <h4>Ortopedi</h4>
+                                    <p>Kemik ve eklem hastalıkları</p>
+                                </div>
+                                <div class="department-card" data-dept="dermatology">
+                                    <i class="fas fa-hand-paper"></i>
+                                    <h4>Dermatoloji</h4>
+                                    <p>Cilt hastalıkları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-panel" data-step="2">
+                            <h3>Doktor Seçimi</h3>
+                            <div class="selected-info">
+                                <p>Seçilen Doktor: <strong id="selected-doctor">-</strong></p>
+                            </div>
+                            <div class="doctor-list" id="doctor-list">
+                                <!-- Doktorlar dinamik olarak yüklenecek -->
+                            </div>
+                        </div>
+
+                        <div class="step-panel" data-step="3">
+                            <h3>Tarih ve Saat Seçimi</h3>
+                            <div class="date-time-selection">
+                                <div class="date-picker">
+                                    <h4>Tarih Seçin</h4>
+                                    <input type="date" id="appointment-date">
+                                </div>
+                                <div class="time-slots">
+                                    <h4>Saat Seçin</h4>
+                                    <div class="time-slot-grid" id="time-slots">
+                                        <!-- Saatler dinamik olarak yüklenecek -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-panel" data-step="4">
+                            <h3>Randevu Özeti</h3>
+                            <div class="appointment-summary">
+                                <div class="summary-item">
+                                    <span>Branş:</span>
+                                    <span id="summary-department">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Doktor:</span>
+                                    <span id="summary-doctor">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Tarih:</span>
+                                    <span id="summary-date">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Saat:</span>
+                                    <span id="summary-time">-</span>
+                                </div>
+                            </div>
+
+                            <div class="patient-info">
+                                <h4>Hasta Bilgileri</h4>
+                                <div class="form-group">
+                                    <label>Ad Soyad</label>
+                                    <input type="text" placeholder="Adınızı ve soyadınızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefon</label>
+                                    <input type="tel" placeholder="Telefon numaranızı girin">
+                                </div>
+                                <div class="form-group">
+                                    <label>E-posta</label>
+                                    <input type="email" placeholder="E-posta adresinizi girin">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-navigation">
+                        <button id="prev-step-btn" class="btn-nav" onclick="previousStep()" disabled>Önceki</button>
+                        <button id="next-step-btn" class="btn-nav" onclick="nextStep()">Sonraki</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hasta Portalı -->
+            <section id="patient-portal" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-user-circle"></i> Hasta Portalı</h2>
+                    <p>Kişisel sağlık verilerinize güvenli erişim</p>
+                </div>
+                <div class="module-content">
+                    <div class="portal-tabs">
+                        <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+                        <button class="tab-btn" data-tab="appointments">Randevularım</button>
+                        <button class="tab-btn" data-tab="results">Tahlil Sonuçları</button>
+                        <button class="tab-btn" data-tab="prescriptions">Reçetelerim</button>
+                    </div>
+
+                    <div class="tab-panel active" data-panel="dashboard">
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Yaklaşan Randevular</h3>
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="appointment-item">
+                                        <div>
+                                            <strong>28 Temmuz 2025</strong><br>
+                                            Dr. Mehmet Özkan<br>
+                                            Kardiyoloji
+                                        </div>
+                                        <span class="status upcoming">Yaklaşan</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Son Tahlil Sonuçları</h3>
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="result-item">
+                                        <div>
+                                            <strong>Tam Kan Sayımı</strong><br>
+                                            25 Temmuz 2025
+                                        </div>
+                                        <span class="status normal">Normal</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Aktif Reçeteler</h3>
+                                    <i class="fas fa-prescription"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="prescription-item">
+                                        <div>
+                                            <strong>Aspirin 100mg</strong><br>
+                                            Günde 1 kez
+                                        </div>
+                                        <button class="btn-small">Detay</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Sağlık Trendi</h3>
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="card-content">
+                                    <p>Son 6 ayda genel sağlık durumunuz stabil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-panel="appointments">
+                        <div class="appointments-list">
+                            <div class="appointment-card">
+                                <div>
+                                    <h4>Dr. Mehmet Özkan - Kardiyoloji</h4>
+                                    <p>28 Temmuz 2025, 14:30</p>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn-small">İptal Et</button>
+                                    <button class="btn-small">Değiştir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-panel="results">
+                        <div class="results-list">
+                            <div class="result-card">
+                                <div>
+                                    <h4>Tam Kan Sayımı</h4>
+                                    <p>25 Temmuz 2025</p>
+                                </div>
+                                <div class="result-actions">
+                                    <button class="btn-small">Görüntüle</button>
+                                    <button class="btn-small">İndir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-panel="prescriptions">
+                        <div class="prescriptions-list">
+                            <div class="prescription-card">
+                                <div>
+                                    <h4>Aspirin 100mg</h4>
+                                    <p>Günde 1 kez, 30 gün</p>
+                                </div>
+                                <div class="prescription-actions">
+                                    <button class="btn-small">Yenile</button>
+                                    <button class="btn-small">Detay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sağlık Blogu -->
+            <section id="health-blog" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-blog"></i> Sağlık Blogu</h2>
+                    <p>Uzmanlarımızdan sağlık tavsiyeleri ve güncel bilgiler</p>
+                </div>
+                <div class="module-content">
+                    <div class="blog-filters">
+                        <button class="filter-btn active" data-category="all">Tümü</button>
+                        <button class="filter-btn" data-category="cardiology">Kardiyoloji</button>
+                        <button class="filter-btn" data-category="nutrition">Beslenme</button>
+                        <button class="filter-btn" data-category="psychology">Psikoloji</button>
+                        <button class="filter-btn" data-category="pediatrics">Pediatri</button>
+                    </div>
+
+                    <div class="blog-search">
+                        <input type="text" id="blog-search" placeholder="Blog yazılarında ara...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="blog-content">
+                        <div class="blog-posts">
+                            <article class="blog-post" data-category="cardiology">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/400x200" alt="Kalp Sağlığı">
+                                </div>
+                                <div class="post-content">
+                                    <h3>Kalp Sağlığını Korumak İçin 10 Altın Kural</h3>
+                                    <p>Kalp hastalıkları günümüzde en yaygın sağlık sorunlarından biri. Bu yazımızda kalp sağlığınızı korumak için...</p>
+                                    <div class="post-meta">
+                                        <span><i class="fas fa-user"></i> Dr. Mehmet Özkan</span>
+                                        <span><i class="fas fa-calendar"></i> 25 Temmuz 2025</span>
+                                        <span><i class="fas fa-tag"></i> Kardiyoloji</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn-primary">Devamını Oku</button>
+                                        <button class="share-btn">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post" data-category="nutrition">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/400x200" alt="Sağlıklı Beslenme">
+                                </div>
+                                <div class="post-content">
+                                    <h3>Sağlıklı Beslenme İçin Pratik Öneriler</h3>
+                                    <p>Günlük yaşamda sağlıklı beslenme alışkanlıkları geliştirmek için basit ama etkili öneriler...</p>
+                                    <div class="post-meta">
+                                        <span><i class="fas fa-user"></i> Dyt. Zehra Yılmaz</span>
+                                        <span><i class="fas fa-calendar"></i> 23 Temmuz 2025</span>
+                                        <span><i class="fas fa-tag"></i> Beslenme</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn-primary">Devamını Oku</button>
+                                        <button class="share-btn">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post" data-category="psychology">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/400x200" alt="Stres Yönetimi">
+                                </div>
+                                <div class="post-content">
+                                    <h3>Stresle Başa Çıkma Yöntemleri</h3>
+                                    <p>Modern yaşamın getirdiği stresle etkili bir şekilde başa çıkmak için uzman önerileri...</p>
+                                    <div class="post-meta">
+                                        <span><i class="fas fa-user"></i> Psik. Ahmet Demir</span>
+                                        <span><i class="fas fa-calendar"></i> 20 Temmuz 2025</span>
+                                        <span><i class="fas fa-tag"></i> Psikoloji</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn-primary">Devamını Oku</button>
+                                        <button class="share-btn">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="blog-sidebar">
+                            <div class="sidebar-widget">
+                                <h3>Popüler Yazılar</h3>
+                                <div class="popular-posts">
+                                    <div class="popular-post">
+                                        <h4>Diyabet ve Beslenme</h4>
+                                        <span class="read-count">1,250 okuma</span>
+                                    </div>
+                                    <div class="popular-post">
+                                        <h4>Çocuklarda Aşı Takvimi</h4>
+                                        <span class="read-count">980 okuma</span>
+                                    </div>
+                                    <div class="popular-post">
+                                        <h4>Migren ve Tetikleyiciler</h4>
+                                        <span class="read-count">875 okuma</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h3>Newsletter</h3>
+                                <p>Sağlık haberlerini kaçırmayın!</p>
+                                <div class="newsletter-form">
+                                    <input type="email" placeholder="E-posta adresiniz">
+                                    <button class="btn-primary">Abone Ol</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Etkinlik Takvimi -->
+            <section id="event-calendar" class="module-section">
+                <div class="module-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Etkinlik ve Seminer Takvimi</h2>
+                    <p>Sağlık etkinlikleri ve seminerlerimize katılın</p>
+                </div>
+                <div class="module-content">
+                    <div class="calendar-controls">
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="calendar">Takvim</button>
+                            <button class="view-btn" data-view="list">Liste</button>
+                        </div>
+                        <div class="event-filters">
+                            <select id="event-category">
+                                <option value="all">Tüm Etkinlikler</option>
+                                <option value="seminar">Seminerler</option>
+                                <option value="screening">Taramalar</option>
+                                <option value="workshop">Atölyeler</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="calendar-view active" data-view="calendar">
+                        <div class="calendar-header">
+                            <button class="nav-btn" id="prev-month">‹</button>
+                            <h3 id="current-month">Temmuz 2025</h3>
+                            <button class="nav-btn" id="next-month">›</button>
+                        </div>
+
+                        <div class="calendar-grid">
+                            <div class="calendar-day-header">Pzt</div>
+                            <div class="calendar-day-header">Sal</div>
+                            <div class="calendar-day-header">Çar</div>
+                            <div class="calendar-day-header">Per</div>
+                            <div class="calendar-day-header">Cum</div>
+                            <div class="calendar-day-header">Cmt</div>
+                            <div class="calendar-day-header">Paz</div>
+
+                            <div class="calendar-day">1</div>
+                            <div class="calendar-day">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day">6</div>
+                            <div class="calendar-day">7</div>
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day">9</div>
+                            <div class="calendar-day">10</div>
+                            <div class="calendar-day">11</div>
+                            <div class="calendar-day">12</div>
+                            <div class="calendar-day">13</div>
+                            <div class="calendar-day">14</div>
+                            <div class="calendar-day has-event">15
+                                <div class="event-indicator">Diyabet Semineri</div>
+                            </div>
+                            <div class="calendar-day">16</div>
+                            <div class="calendar-day">17</div>
+                            <div class="calendar-day">18</div>
+                            <div class="calendar-day">19</div>
+                            <div class="calendar-day">20</div>
+                            <div class="calendar-day">21</div>
+                            <div class="calendar-day has-event">22
+                                <div class="event-indicator">Ücretsiz Kalp Taraması</div>
+                            </div>
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day">26</div>
+                            <div class="calendar-day">27</div>
+                            <div class="calendar-day today">28</div>
+                            <div class="calendar-day">29</div>
+                            <div class="calendar-day has-event">30
+                                <div class="event-indicator">Beslenme Atölyesi</div>
+                            </div>
+                            <div class="calendar-day">31</div>
+                        </div>
+                    </div>
+
+                    <div class="list-view" data-view="list">
+                        <div class="event-list">
+                            <div class="event-card" data-category="seminar">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Tem</span>
+                                </div>
+                                <div class="event-info">
+                                    <h3>Diyabet Semineri</h3>
+                                    <p>Diyabet hastalığı hakkında bilgilendirme semineri</p>
+                                    <div class="event-details">
+                                        <span><i class="fas fa-clock"></i> 14:00</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Konferans Salonu</span>
+                                        <span><i class="fas fa-users"></i> 50 kişi</span>
+                                    </div>
+                                </div>
+                                <div class="event-actions">
+                                    <button class="btn-primary">Kayıt Ol</button>
+                                    <button class="btn-secondary">Detaylar</button>
+                                </div>
+                            </div>
+
+                            <div class="event-card" data-category="screening">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">Tem</span>
+                                </div>
+                                <div class="event-info">
+                                    <h3>Kalp Taraması</h3>
+                                    <p>Ücretsiz kalp sağlığı taraması</p>
+                                    <div class="event-details">
+                                        <span><i class="fas fa-clock"></i> 09:00-17:00</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Kardiyoloji</span>
+                                        <span><i class="fas fa-users"></i> 100 kişi</span>
+                                    </div>
+                                </div>
+                                <div class="event-actions">
+                                    <button class="btn-primary">Kayıt Ol</button>
+                                    <button class="btn-secondary">Detaylar</button>
+                                </div>
+                            </div>
+
+                            <div class="event-card" data-category="workshop">
+                                <div class="event-date">
+                                    <span class="day">30</span>
+                                    <span class="month">Tem</span>
+                                </div>
+                                <div class="event-info">
+                                    <h3>Beslenme Atölyesi</h3>
+                                    <p>Sağlıklı beslenme alışkanlıkları atölyesi</p>
+                                    <div class="event-details">
+                                        <span><i class="fas fa-clock"></i> 10:00</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Eğitim Salonu</span>
+                                        <span><i class="fas fa-users"></i> 30 kişi</span>
+                                    </div>
+                                </div>
+                                <div class="event-actions">
+                                    <button class="btn-primary">Kayıt Ol</button>
+                                    <button class="btn-secondary">Detaylar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-events">
+                        <h3>Yaklaşan Etkinlikler</h3>
+                        <div class="upcoming-list">
+                            <div class="upcoming-item">
+                                <span class="date">15 Tem</span>
+                                <span class="title">Diyabet Semineri</span>
+                                <button class="btn-small">Kayıt</button>
+                            </div>
+                            <div class="upcoming-item">
+                                <span class="date">22 Tem</span>
+                                <span class="title">Kalp Taraması</span>
+                                <button class="btn-small">Kayıt</button>
+                            </div>
+                            <div class="upcoming-item">
+                                <span class="date">30 Tem</span>
+                                <span class="title">Beslenme Atölyesi</span>
+                                <button class="btn-small">Kayıt</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://hisarhospital.com/wp-content/uploads/2019/10/logo.svg" alt="Hisar Hospital">
+                </div>
+                <div class="footer-info">
+                    <p>© 2025 Hisar Hospital. Tüm hakları saklıdır.</p>
+                    <p>Kurumsal Renklerle Yenilikçi Web Modülleri</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
